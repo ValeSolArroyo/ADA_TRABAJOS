@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "descripción": "Comprar pan",
+    "estado": "pendiente"
+  },
+  {
+    "id": 2,
+    "descripción": "Comprar pan",
+    "estado": "pendiente"
+  },
+  {
+    "id": 3,
+    "nombre": "Proyecto 1",
+    "estado": "pendiente"
+  }
+]
