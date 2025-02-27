@@ -31,7 +31,7 @@ client.on('data', (data) => {
 
 //Ejer 4
 client.on('error', (err) => {
-    console.error('Error:', err.message);
+    console.log('Error:', err.message);
     client.end();
 });
 
@@ -90,7 +90,16 @@ function reconentar() {
 client.on('error', reconectar());
 
 //Ejer 10
-setTimeout(() => {
+
+let timeout = setTimeout(() => {
     console.log('No hay datos del servidor');
     client.end();
-}, 10000)
+});
+
+client.on('data', (data) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        console.log('No hay datos del servidor');
+        client.end();
+    }, 10000);
+})
